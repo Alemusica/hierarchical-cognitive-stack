@@ -1,8 +1,10 @@
-# Hierarchical Memory MVP
+# Hierarchical Cognitive Stack
 
-**4-Layer Memory Architecture for LLMs** — Sistema di memoria gerarchica ispirato a principi biologici, frattali e istintivi.
+> **⚠️ WIP - Work In Progress**
 
-## Architettura
+**4-Layer Memory Architecture for LLMs** — A hierarchical memory system inspired by biological, fractal, and instinctive principles.
+
+## Architecture
 
 ```
                               INPUT
@@ -10,27 +12,28 @@
                                 ▼
 ┌────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                │
-│   ① INSTINCTIVE LAYER (Primo contatto)                                        │
-│   • Riceve input, crea FINGERPRINT (Shazam-like)                              │
-│   • Chiede routing a Dispatcher NN                                            │
-│   • Retrieval diretto da LTM                                                  │
-│   • Feed risultati a STM (bidirezionale)                                      │
+│   ① INSTINCTIVE LAYER (First Contact)                                         │
+│   • Receives input, creates FINGERPRINT (Shazam-like)                         │
+│   • Asks routing from Dispatcher NN                                           │
+│   • Direct retrieval from LTM                                                 │
+│   • Feeds results to STM (bidirectional)                                      │
 │                                                                                │
 │         │                    │                       │                         │
-│         │ "mappa?"           │ retrieval            │ feed                    │
-│         ▼                    │ diretto               ▼                         │
+│         │ "routing?"         │ direct               │ feed                    │
+│         ▼                    │ retrieval             ▼                         │
 │   ┌───────────────┐          │              ┌─────────────────┐               │
 │   │  DISPATCHER   │          │              │  SHORT-TERM     │               │
 │   │  (LLM + NN)   │◄─────────┼──────────────│  MEMORY (STM)   │               │
-│   │               │          │              │                 │               │
-│   │ • NN: Router  │          │              │ Vector DB raw   │               │
-│   │   (mappa)     │──────────┘              │ + labeling      │               │
-│   │               │                         │ per topic       │               │
-│   │ • LLM:        │                         │                 │               │
-│   │   Distiller   │◄────────────────────────│ Bidirezionale:  │               │
-│   │   Valutatore  │                         │ "Ho abbastanza  │               │
-│   │               │                         │  segnale?"      │               │
-│   │ • NN:         │                         └─────────────────┘               │
+│   │  "MTM Fabric" │          │              │                 │               │
+│   │               │          │              │ Raw Vector DB   │               │
+│   │ • NN: Router  │──────────┘              │ + topic labels  │               │
+│   │   (map)       │                         │                 │               │
+│   │               │                         │ Bidirectional:  │               │
+│   │ • LLM:        │◄────────────────────────│ "Do I have      │               │
+│   │   Distiller   │                         │  enough signal?"│               │
+│   │   Evaluator   │                         └─────────────────┘               │
+│   │               │                                                           │
+│   │ • NN:         │                                                           │
 │   │   Embedder    │                                                           │
 │   └───────────────┘                                                           │
 │           │                                                                    │
@@ -39,13 +42,13 @@
 │   ┌─────────────────────────────────────────────────────────────┐             │
 │   │  LONG-TERM MEMORY (LTM)                                     │             │
 │   │  Graph-Vector DB (SurrealDB + HNSW)                         │             │
-│   │  • Fingerprint consolidati                                  │             │
-│   │  • Pattern profondi (DNA-like)                              │             │
-│   │  • Knowledge encoded                                        │             │
+│   │  • Consolidated fingerprints                                │             │
+│   │  • Deep patterns (DNA-like)                                 │             │
+│   │  • Encoded knowledge                                        │             │
 │   └─────────────────────────────────────────────────────────────┘             │
 │                                                                                │
-│   ⑧ Ogni ciclo = EVOLUZIONE                                                   │
-│      I fingerprint si rafforzano, i path diventano più veloci                 │
+│   ⑧ Every cycle = EVOLUTION                                                   │
+│      Fingerprints strengthen, paths become faster                             │
 │                                                                                │
 └────────────────────────────────────────────────────────────────────────────────┘
                                 │
@@ -53,30 +56,36 @@
                              OUTPUT
 ```
 
-## Concetti Chiave
+## Core Concepts
 
-### Analogia Shazam
-Come Shazam crea fingerprint audio per match istantaneo, questo sistema:
-- Crea fingerprint percettivi degli input
-- Li matcha con pattern consolidati in LTM
-- Se match forte → risposta istintiva
+### Shazam Analogy
+Like Shazam creates audio fingerprints for instant matching, this system:
+- Creates perceptual fingerprints of inputs
+- Matches them against consolidated patterns in LTM
+- If strong match → instinctive response
 
-### Bidirezionalità (da Phonon-UI)
-- **Instinctive ↔ STM**: "Hai abbastanza segnale per fingerprint?"
-- STM notifica quando topic è "ready" (come buffer audio di Shazam)
-- Se rumore → più tempo, più samples necessari
+### Bidirectionality (from Phonon-UI)
+- **Instinctive ↔ STM**: "Do you have enough signal for fingerprinting?"
+- STM notifies when topic is "ready" (like Shazam's audio buffer)
+- If noise → more time, more samples needed
 
-### Evoluzione
-- Ogni ciclo rafforza i fingerprint
-- Path preferenziali emergono (come fulmine che segue resistenza minima)
-- Sistema "impara" e diventa più veloce
+### Evolution
+- Each cycle strengthens fingerprints
+- Preferred paths emerge (like lightning following least resistance)
+- System "learns" and becomes faster
 
-## Installazione
+### Medium-Term Fabric
+The Dispatcher is not just a layer but the **connective fabric** that ties everything:
+- **NN Router**: Maps fingerprints to LTM locations
+- **LLM Distiller**: Compresses knowledge from STM
+- **NN Embedder**: Injects distilled knowledge into LTM
+
+## Installation
 
 ```bash
 # Clone
-git clone https://github.com/alemusica/hierarchical-memory-mvp
-cd hierarchical-memory-mvp
+git clone https://github.com/Alemusica/hierarchical-cognitive-stack
+cd hierarchical-cognitive-stack
 
 # Install
 pip install -e ".[dev]"
@@ -92,24 +101,22 @@ import asyncio
 from src import create_system
 
 async def main():
-    # Crea sistema
     system = create_system(embedding_dim=128)
 
     async with system:
-        # Processa input
         result = await system.process(
-            "Come resetto la password?",
+            "How do I reset my password?",
             topic="auth"
         )
 
-        print(f"Fingerprint creato: {result.fingerprint_created}")
-        print(f"Risposta: {result.response}")
-        print(f"Latenza: {result.latency_ms:.2f}ms")
+        print(f"Fingerprint created: {result.fingerprint_created}")
+        print(f"Response: {result.response}")
+        print(f"Latency: {result.latency_ms:.2f}ms")
 
 asyncio.run(main())
 ```
 
-## Componenti
+## Components
 
 ### STM (Short-Term Memory)
 ```python
@@ -120,10 +127,9 @@ stm = STM(min_samples_per_topic=5, quality_threshold=0.7)
 # Buffer input
 stm.buffer(vector, topic="auth")
 
-# Check stato (bidirezionale)
+# Check state (bidirectional)
 state = stm.get_state()
 if stm.is_topic_ready("auth"):
-    # Pronto per fingerprint
     data = stm.consume_topic("auth")
 ```
 
@@ -132,12 +138,10 @@ if stm.is_topic_ready("auth"):
 from src import InstinctiveLayer
 
 instinctive = InstinctiveLayer(stm=stm, dispatcher=dispatcher, ltm=ltm)
-
-# Processa input
 result = await instinctive.process_input("query", topic="auth")
 ```
 
-### Dispatcher (LLM + NN)
+### Dispatcher (Medium-Term Fabric)
 ```python
 from src import Dispatcher
 
@@ -146,7 +150,7 @@ dispatcher = Dispatcher(embedding_dim=128)
 # NN: routing
 routing = await dispatcher.get_routing(fingerprint)
 
-# LLM: valutazione
+# LLM: evaluation
 evaluation = await dispatcher.evaluate(fingerprint, retrieval_result)
 ```
 
@@ -167,54 +171,59 @@ entry_id = await ltm.store(vector, metadata={"topic": "auth"})
 matches = await ltm.search(query_vector, top_k=5)
 ```
 
-## Test
+## Run Demo
 
 ```bash
-# Tutti i test
+python examples/demo.py
+```
+
+## Testing
+
+```bash
+# All tests
 pytest tests/ -v
 
-# Solo integration
-pytest tests/test_integration.py -v
-
-# Con coverage
+# With coverage
 pytest tests/ -v --cov=src --cov-report=term-missing
 ```
 
-## Ipotesi da Validare
+## Hypotheses to Validate
 
-| ID | Ipotesi | Metrica |
-|----|---------|---------|
-| H1 | Fingerprinting più veloce di full-context | Latency ratio < 0.1 |
-| H2 | Pattern ripetuti riducono latenza | Evolution rate > 0.3 |
-| H3 | Routing migliora precision | Precision > 0.8 |
-| H4 | Distillazione preserva semantica | Cosine sim > 0.7 |
+| ID | Hypothesis | Metric | Target |
+|----|------------|--------|--------|
+| H1 | Fingerprinting faster than full-context | Latency ratio | < 0.1 |
+| H2 | Repeated patterns reduce latency | Evolution rate | > 30% |
+| H3 | Routing improves precision | Precision | > 0.8 |
+| H4 | Distillation preserves semantics | Cosine similarity | > 0.7 |
 
-## Struttura
+## Project Structure
 
 ```
-hierarchical-memory-mvp/
+hierarchical-cognitive-stack/
 ├── src/
 │   ├── __init__.py
 │   ├── stm.py          # Short-Term Memory
 │   ├── ltm.py          # Long-Term Memory
-│   ├── dispatcher.py   # Dispatcher (LLM + NN)
+│   ├── dispatcher.py   # Dispatcher (LLM + NN) - MTM Fabric
 │   ├── instinctive.py  # Instinctive Layer
-│   └── orchestrator.py # Orchestratore
+│   └── orchestrator.py # System Orchestrator
 ├── tests/
 │   └── test_integration.py
+├── examples/
+│   └── demo.py
 ├── pyproject.toml
 └── README.md
 ```
 
-## Riferimenti
+## Related Projects
 
-- **Phonon-UI**: Pattern bidirezionalità (cooperative refinement)
-- **Nico/surge_shazam**: Fingerprinting Shazam-like (MiniRocket)
-- **Rememberance**: Concetti memoria gerarchica
+- **[Phonon-UI](https://github.com/alemusica/phonon-ui)**: Bidirectional patterns (cooperative refinement)
+- **[Nico](https://github.com/alemusica/nico)**: Shazam-like fingerprinting (surge_shazam/MiniRocket)
+- **[Rememberance](https://github.com/alemusica/Rememberance)**: Hierarchical memory concepts
 
-## Autore
+## Author
 
-Alessio (@FluturArt)
+Alessio ([@FluturArt](https://x.com/FluturArt))
 
 ## License
 

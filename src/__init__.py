@@ -1,5 +1,5 @@
 """
-Hierarchical Memory MVP
+Hierarchical Cognitive Stack
 =======================
 
 4-Layer Memory Architecture for LLMs:

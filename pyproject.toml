@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "hierarchical-memory-mvp"
+name = "hierarchical-cognitive-stack"
 version = "0.1.0"
 description = "4-Layer Hierarchical Memory Architecture for LLMs - MVP"
 readme = "README.md"
