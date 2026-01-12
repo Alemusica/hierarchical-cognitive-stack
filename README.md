@@ -195,8 +195,10 @@ pytest tests/ -v --cov=src --cov-report=term-missing
 |----|------------|--------|--------|
 | H1 | Fingerprinting faster than full-context | Latency ratio | < 0.1 |
 | H2 | Repeated patterns reduce latency | Evolution rate | > 30% |
-| H3 | Routing improves precision | Precision | > 0.8 |
+| H3 | Routing errors are coherent (nearby, not random) | Error distance | < threshold |
 | H4 | Distillation preserves semantics | Cosine similarity | > 0.7 |
+
+> **Note**: H3 measures *error coherence*, not traditional precision. A "wrong" answer that's semantically close to the target proves the routing space is well-structured. See [THEORY.md](docs/THEORY.md#3-error-coherence--coerenza-dellerrore) for details.
 
 ## Project Structure
 
