@@ -58,6 +58,8 @@
 
 ## Core Concepts
 
+> **Deep dive**: See [docs/THEORY.md](docs/THEORY.md) for theoretical foundations (EN/IT)
+
 ### Shazam Analogy
 Like Shazam creates audio fingerprints for instant matching, this system:
 - Creates perceptual fingerprints of inputs
